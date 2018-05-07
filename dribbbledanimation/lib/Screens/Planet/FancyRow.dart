@@ -45,10 +45,10 @@ class FancyRow extends StatelessWidget {
         fontWeight: FontWeight.w600
     );
 
-    Widget _planetValue({String value, String image}) {
+    Widget _planetValue({String value, IconData icon}) {
       return new Row(
           children: <Widget>[
-            new Image.asset(image, height: 12.0),
+            new Icon(icon, size: 12.0 , color: Colors.lightGreen),
             new Container(width: 4.0),
             new Text(value, style: regularTextStyle),
           ]
@@ -67,7 +67,7 @@ class FancyRow extends StatelessWidget {
           new Container(height: 2.0),
           new Text(customerTransaction.Terminal + " - " + customerTransaction.AUser, style: subHeaderTextStyle),
           new Container(
-              margin: new EdgeInsets.symmetric(vertical: 8.0),
+              margin: new EdgeInsets.symmetric(vertical: 8.0 , horizontal: 5.0),
               height: 3.0,
               width: 50.0,
               color: new Color(0xff00c6ff)
@@ -77,18 +77,18 @@ class FancyRow extends StatelessWidget {
               new Expanded(
                   child: _planetValue(
                       value: 'Credit : ' + customerTransaction.CrAmount.toString(),
-                      image: 'assets/img/ic_distance.png')
+                      icon: Icons.remove_circle)
 
               ),
               new Expanded(
                   child: _planetValue(
                       value: 'Debit : ' + customerTransaction.DrAmount.toString(),
-                      image: 'assets/img/ic_gravity.png')
+                      icon: Icons.add_circle)
               ),
               new Expanded(
                   child: _planetValue(
                       value: 'Balance : ' + customerTransaction.BalanceAmount.toString(),
-                      image: 'assets/img/ic_gravity.png')
+                      icon: Icons.account_balance_wallet)
               )
             ],
           ),

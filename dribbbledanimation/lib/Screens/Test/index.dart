@@ -7,19 +7,23 @@ import 'package:dribbbledanimation/Screens/Planet/FancyRow.dart';
 import 'package:http/http.dart' as http;
 
 class TestScreen extends StatefulWidget {
-  const TestScreen({Key key}) : super(key: key);
+  String customerID;
+  TestScreen(this.customerID,{Key key}) : super(key: key);
 
   @override
-  TestScreenState createState() => new TestScreenState();
+  TestScreenState createState() => new TestScreenState(customerID);
 }
 
 class TestScreenState extends State<TestScreen>{
 
+  String customerID;
+  TestScreenState(this.customerID);
   List data;
 
+
   Future<String> fetchPost() async {
-    final response =
-    await http.get('http://192.168.1.6:3000/api/CustomerTransaction?CustomerID=85');
+    print("Getting " + customerID);
+    final response = await http.get('http://192.168.1.6:3000/api/CustomerTransaction?CustomerID=' + customerID);
     final responseJson = json.decode(response.body);
     print("responseJson  : " + responseJson.toString());
     //CustomerTransaction tt = new CustomerTransaction.fromJson(responseJson);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dribbbledanimation/Screens/Login/index.dart';
 import 'package:dribbbledanimation/Screens/Menu/index.dart';
-import 'package:dribbbledanimation/Screens/Home/index.dart';
+import 'package:dribbbledanimation/Screens/CustomerTransaction/index.dart';
 import 'package:dribbbledanimation/Screens/Test/index.dart';
 
 class Routes {
@@ -26,7 +26,13 @@ class Routes {
 
           case '/customerTransaction':
             return new MyCustomRoute(
-              builder: (_) => new TestScreen(),
+              builder: (_) => new DropDownScreen(),
+              settings: settings,
+            );
+
+          case '/customerTransactionSpesific':
+            return new MyCustomRoute(
+              builder: (_) => new TestScreen("85"),
               settings: settings,
             );
         }
