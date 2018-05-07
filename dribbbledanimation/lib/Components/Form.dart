@@ -5,7 +5,7 @@ class FormContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return (new Container(
-      margin: new EdgeInsets.symmetric(horizontal: 20.0),
+      margin: new EdgeInsets.symmetric(horizontal: 10.0),
       child: new Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[

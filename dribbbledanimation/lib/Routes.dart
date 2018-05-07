@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:dribbbledanimation/Screens/Login/index.dart';
+import 'package:dribbbledanimation/Screens/Menu/index.dart';
 import 'package:dribbbledanimation/Screens/Home/index.dart';
+import 'package:dribbbledanimation/Screens/Test/index.dart';
 
 class Routes {
   Routes() {
     runApp(new MaterialApp(
-      title: "Dribbble Animation App",
-      debugShowCheckedModeBanner: false,
+      title: "Login Test App",
+      debugShowCheckedModeBanner: true,
       home: new LoginScreen(),
       onGenerateRoute: (RouteSettings settings) {
         switch (settings.name) {
@@ -18,7 +20,13 @@ class Routes {
 
           case '/home':
             return new MyCustomRoute(
-              builder: (_) => new HomeScreen(),
+              builder: (_) => new MenuScreen(),
+              settings: settings,
+            );
+
+          case '/customerTransaction':
+            return new MyCustomRoute(
+              builder: (_) => new TestScreen(),
               settings: settings,
             );
         }
